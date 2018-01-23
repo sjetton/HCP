@@ -1,0 +1,134 @@
+﻿@model IEnumerable<HCP_Demo.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section scripts
+    {
+    <script>
+        var ViewPostBackURL = '/Customers/View';
+        $(function () {
+            $(".anchorDetail").click(function () {
+                debugger;
+                var $buttonClicked = $(this);
+                var id = $buttonClicked.attr('data-id');
+                var options = { "backdrop": "static", keyboard: true };
+
+                $.ajax({
+                    type: "GET",
+                    url: ViewPostBackURL,
+                    contentType: "application/json; charset=utf-8",
+                    data: { "Id": id },
+                    datatype: "json",
+                    success: function (data) {
+                        debugger;
+                        $('#viewModalContent').html(data);
+                        $('#viewModal').modal(options);
+                        $('#viewModal').modal('show');
+
+                    },
+                    error: function () {
+                        alert("Dynamic content load failed.");
+                    }
+                });
+            });
+
+            $("#closbtn").click(function () {
+                $('#myModal').modal('hide');
+            });
+        });
+
+    </script>
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <input type="text" name="search" placeholder="Search By Name" value="@ViewData["searchfilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Clear</a>
+        </p>
+    </div>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zip)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zip)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CustomerID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CustomerID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CustomerID">Delete</a> |
+                    <a asp-action="Index" asp-controller="Favorites" asp-route-id="@item.CustomerID">Favorites</a> |
+                    <a href="javascript:void(0);" class="anchorDetail" data-id="@item.CustomerID">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div id='viewModal' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='viewModalContent'></div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\bin\Debug\netcoreapp2.0\HCP_Demo.deps.json
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\bin\Debug\netcoreapp2.0\HCP_Demo.runtimeconfig.json
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\bin\Debug\netcoreapp2.0\HCP_Demo.runtimeconfig.dev.json
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\bin\Debug\netcoreapp2.0\HCP_Demo.dll
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\bin\Debug\netcoreapp2.0\HCP_Demo.pdb
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.csprojResolveAssemblyReference.cache
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.csproj.CoreCompileInputs.cache
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.AssemblyInfoInputs.cache
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.AssemblyInfo.cs
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.dll
+C:\Users\Shawn\source\repos\HCP_Demo\HCP_Demo\obj\Debug\netcoreapp2.0\HCP_Demo.pdb
